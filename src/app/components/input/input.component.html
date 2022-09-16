@@ -1,1 +1,10 @@
-<p>input works!</p>
+<h1>TITULO NO DEFINIDO</h1>
+
+<form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+    <div class="mb-3">
+        <label for="email" class="form-label">DIRECCION DE EMAIL</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="mail">
+        <div id="emailHelp" class="form-text">NO COMPARTIREMOS ESTA INFORMACION PUBLICAMNETE</div>
+    </div>
+    <button type="submit" class="btn btn-primary">ENVIAR</button>
+</form>

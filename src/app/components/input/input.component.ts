@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  constructor() { }
+  formulario: FormGroup
 
-  ngOnInit(): void {
-  }
+    constructor() {
+        this.formulario = new FormBuilder().group({
+            mail: ['', Validators.required],
+        })
+    }
+
+    ngOnInit(): void {
+    }
+
+    enviarFormulario(){
+        console.log("Enviando...")
+        console.log(this.formulario)
+    }
+
 
 }
